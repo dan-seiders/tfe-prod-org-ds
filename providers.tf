@@ -2,7 +2,7 @@ terraform {
   required_version = "~>1.9.0"
 
   cloud {
-    hostname     = "some_tfe_hostname.domain"
+    hostname     = "some-hostname.domain"
     organization = "iac"
 
     workspaces {
@@ -19,5 +19,5 @@ terraform {
 }
 
 provider "tfe" {
-  hostname = "some_tfe_hostname.domain"
+  hostname = "some-hostname.domain"
 }

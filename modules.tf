@@ -1,5 +1,5 @@
 module "iac_org" {
-  source = "./modules"
+  source = "./modules/organization"
 
   name  = "iac_v2"
   email = "org_owner@some.domain"
