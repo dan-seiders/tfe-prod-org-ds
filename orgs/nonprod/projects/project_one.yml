@@ -1,0 +1,18 @@
+name: project_one
+description: "Project one description"
+prevent_destroy: true
+access:
+  - team: team1
+    access: admin
+variable_set:
+  -
+workspace:
+  - name: workspace_one
+    description: "NonProd workspace for project one"
+    tag_names:
+      - nonprod
+    auto_apply: true
+    variable_set:
+      - "vRA Pre-Prod Set"
+    prevent_destroy: true
+    access: null
