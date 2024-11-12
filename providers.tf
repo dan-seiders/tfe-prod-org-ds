@@ -2,7 +2,7 @@ terraform {
   required_version = "~>1.9.0"
 
   cloud {
-    hostname     = "some-hostname.domain"
+    hostname     = "present-wallaby.dan-seiders.sbx.hashidemos.io"
     organization = "iac"
 
     workspaces {
@@ -19,5 +19,10 @@ terraform {
 }
 
 provider "tfe" {
-  hostname = "some-hostname.domain"
+  hostname = "present-wallaby.dan-seiders.sbx.hashidemos.io"
+}
+
+
+output "workspaces" {
+  value = module.iac_org.workspaces
 }
