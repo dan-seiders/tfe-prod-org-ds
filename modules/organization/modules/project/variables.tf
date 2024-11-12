@@ -16,7 +16,7 @@ variable "description" {
 variable "config" {
   description = "The configuration of the project."
   type = object({
-    execution_mode = string
+    execution_mode = optional(string)
   })
 
   default = {
@@ -27,44 +27,12 @@ variable "config" {
 variable "workspaces" {
   description = "The workspaces of the project."
   type = list(object({
-    name         = string
-    description  = string
-    org_name     = string
-    project_name = string
-    tag_names    = list(string)
-    auto_apply   = bool
+    name        = string
+    description = string
+    tag_names   = list(string)
+    auto_apply  = bool
   }))
 }
-
-
-# variable "name" {
-#   description = "The name of the organization."
-#   type        = string
-# }
-
-# variable "email" {
-#   description = "The email address of the organization owner."
-#   type        = string
-# }
-
-# variable "default_settings" {
-#   description = "The default settings for the organization."
-#   type = object({
-#     execution_mode = string
-#   })
-
-#   default = {
-#     execution_mode = "remote"
-#   }
-# }
-
-# variable "teams" {
-
-# }
-
-# variable "projects" {
-
-# }
 
 # SHOULD THIS BE FROM GLOBAL VARIABLE SET?
 # variable "vra_username" {

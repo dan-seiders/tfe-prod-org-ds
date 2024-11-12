@@ -2,8 +2,8 @@ name: project_one
 description: "Project one description"
 config:
   prevent_destroy: true
-  access:
-    - team: team1
+  team_access:
+    - name: team_one
       access: admin
   variable_set:
     -

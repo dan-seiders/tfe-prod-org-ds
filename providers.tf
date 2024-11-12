@@ -21,8 +21,3 @@ terraform {
 provider "tfe" {
   hostname = "present-wallaby.dan-seiders.sbx.hashidemos.io"
 }
-
-
-output "workspaces" {
-  value = module.iac_org.workspaces
-}
