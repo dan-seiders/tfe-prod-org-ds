@@ -16,23 +16,39 @@ variable "description" {
 variable "config" {
   description = "The configuration of the project."
   type = object({
-    execution_mode = optional(string)
-  })
+    execution_mode  = optional(string)
+    prevent_destroy = optional(bool)
+    team_access = optional(list(object({
+      name   = string
+      access = string
+    })))
+    variable_sets = list(
+      object({
+        name        = optional(string)
+        description = optional(string)
+        category    = optional(string)
+        sensitive   = optional(bool)
+        hcl         = optional(bool)
+        value       = optional(string)
+    }))
+    }
+  )
 
   default = {
     execution_mode = "remote"
+    team_access = [{
+      name   = ""
+      access = ""
+    }]
+    variable_sets = []
   }
 }
 
 variable "workspaces" {
   description = "The workspaces of the project."
-  type = list(object({
-    name        = string
-    description = string
-    tag_names   = list(string)
-    auto_apply  = bool
-  }))
 }
+
+variable "teams" {}
 
 # SHOULD THIS BE FROM GLOBAL VARIABLE SET?
 # variable "vra_username" {

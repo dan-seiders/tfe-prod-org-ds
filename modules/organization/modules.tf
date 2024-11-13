@@ -12,6 +12,12 @@ module "projects" {
   description  = each.value.description
   config       = each.value.config
   workspaces   = each.value.workspaces
+  teams        = tfe_team.this
 
-  depends_on = [tfe_organization.this]
+  depends_on = [tfe_organization.this, tfe_team.this]
 }
+
+
+# output "this" {
+#   value = module.projects.this
+# }

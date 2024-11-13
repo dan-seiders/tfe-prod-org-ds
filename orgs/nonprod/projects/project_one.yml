@@ -2,19 +2,38 @@ name: project_one
 description: "Project one description"
 config:
   prevent_destroy: true
-  team_access:
-    - name: team_one
-      access: admin
-  variable_set:
-    -
+  # team_access:
+  #   - name: team_one
+  #     access: admin
+  #   - name: team_three
+  #     access: read
+  variable_sets:
+    - name: "vRA Pre-Prod Set"
+      # variables:
+      #   - name: "vra_pre_prod_var_one"
+      #     value: "vra_pre_prod_var_one_value"
+      #   - name: "vra_pre_prod_var_two"
+      #     value: "vra_pre_prod_var_two_value"
 workspaces:
-  - name: project_one
+  - name: workspace_one
     description: "NonProd workspace for project one"
     tag_names:
       - nonprod
     auto_apply: true
-    variable_set:
+    variable_sets:
       - "vRA Pre-Prod Set"
     prevent_destroy: true # this isnt worked out yet
-    access: null
+  - name: workspace_two
+    description: "NonProd workspace for project two"
+    tag_names:
+      - nonprod
+    auto_apply: true
+    variable_sets:
+      - "vRA Pre-Prod Set"
+    prevent_destroy: true # this isnt worked out yet
+    team_access:
+      - name: team_one
+        access: admin
+      - name: team_two
+        access: admin
 
