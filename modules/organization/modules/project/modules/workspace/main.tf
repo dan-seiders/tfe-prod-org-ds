@@ -23,6 +23,6 @@ resource "tfe_workspace_variable_set" "workspace_varset" {
   for_each = toset(var.variable_sets)
 
   workspace_id    = tfe_workspace.this.id
-  variable_set_id = var.org_variable_sets[each.value].id
+  variable_set_id = var.project_variable_sets[each.value].id
 }
 

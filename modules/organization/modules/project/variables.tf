@@ -49,15 +49,3 @@ variable "workspaces" {
 }
 
 variable "teams" {}
-
-# SHOULD THIS BE FROM GLOBAL VARIABLE SET?
-# variable "vra_username" {
-#   description = "vRA username"
-#   type        = string
-# }
-
-# variable "vra_password" {
-#   description = "vRA password"
-#   type        = string
-#   sensitive   = true
-# }

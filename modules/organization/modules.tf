@@ -16,8 +16,3 @@ module "projects" {
 
   depends_on = [tfe_organization.this, tfe_team.this]
 }
-
-
-# output "this" {
-#   value = module.projects.this
-# }

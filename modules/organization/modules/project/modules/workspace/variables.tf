@@ -40,6 +40,6 @@ variable "variable_sets" {
   description = "The variable sets for the workspace."
 }
 
-variable "org_variable_sets" {
+variable "project_variable_sets" {
   description = "All available variable sets for the project."
 }

@@ -36,18 +36,16 @@ module "workspaces" {
   source   = "./modules/workspace"
   for_each = local.workspaces_map
 
-  organization      = var.organization
-  project_id        = tfe_project.this.id
-  name              = each.value.name
-  description       = each.value.description
-  tag_names         = each.value.tag_names
-  auto_apply        = each.value.auto_apply
-  team_access       = try(each.value.team_access, {})
-  variable_sets     = each.value.variable_sets
-  org_variable_sets = tfe_variable_set.this
+  organization          = var.organization
+  project_id            = tfe_project.this.id
+  name                  = each.value.name
+  description           = each.value.description
+  tag_names             = each.value.tag_names
+  auto_apply            = each.value.auto_apply
+  team_access           = try(each.value.team_access, {})
+  variable_sets         = each.value.variable_sets
+  project_variable_sets = tfe_variable_set.this
 
   all_org_teams = var.teams
 }
 
-# variable set
-# variables

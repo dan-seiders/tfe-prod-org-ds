@@ -11,7 +11,3 @@ module "iac_org" {
   teams    = fileset(path.root, "orgs/nonprod/teams/*.yml")
   projects = fileset(path.root, "orgs/nonprod/projects/*.yml")
 }
-
-# output "this" {
-#   value = module.iac_org.this
-# }
